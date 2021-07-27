@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "tf-state-gcp-batch-ingestion"
+    bucket = "tf-state-gcp-batch-ingestion-poc"
     prefix = "terraform/state"
   }
 }
@@ -11,7 +11,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "funky-bucket" {
-  name = "batch-pipeline"
+  name = "batch-ingestion-pipeline-poc"
   storage_class = "REGIONAL"
   location  = "us-central1"
 }
